@@ -1,11 +1,10 @@
 # GEOCLIM-dynsoil-steady-state
 
-GEOCLIM - DynSoil - Steady-State computes the geographically-distributed weathering rate (+ erosion, regolith thickness...) at steady-state, according to the given climatology (temperature and runoff) for several CO2 levels, the topographic slope and the lithology fraction in each grid cell.
-The Total weathering flux is assumed to equals the CO2 degassing by the solid Earth.
+GEOCLIM - DynSoil - Steady-State computes the geographically-distributed weathering rate at steady-state, according to the given climatology (temperature and runoff) for several CO<sub>2</sub> levels, the topographic slope, and the lithology fraction within specified grid cells. The code is focused on determining the steady-state CO<sub>2</sub> level on geological timescales where the total weathering flux is assumed to equal the CO<sub>2</sub> degassing by the solid Earth.
 
-The model has two mode:
-	1) Forward mode: impose a CO2 level to the model, it get the corresponding climate field and computes weathering
-	2) Backward mode: impose a volcanic degassing to the model, it finds by inversion the CO2 level for which the total CO2 consumption equals the degassing. The precision level can be set in the main program "dynsoil_climate_mainprog.f90".
+The model has two modes:
+	1) Forward mode: impose a CO<sub>2</sub> level to the model in which it uses the corresponding climate field associated with a suite of climate model input and computes weathering rates.
+	2) Backward mode: impose a volcanic degassing rate to the model, it finds by inversion the CO<sub>2</sub> level for which the total CO2 consumption equals the degassing. The precision level can be set in the main program "dynsoil_climate_mainprog.f90".
 
 In addition the model can be run either in single run mode, for which it computes weathering 1 time for 1 given set of parameter, or in multiple runs mode, for which an netCDF unlimited dimension is created, and the model is run as many time as number of given sets of parameters.
 
